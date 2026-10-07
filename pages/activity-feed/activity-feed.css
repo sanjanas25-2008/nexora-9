@@ -1,0 +1,40 @@
+/* Activity Feed Styles */
+.activity-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.activity-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  transition: background 0.15s ease;
+}
+
+.activity-item:hover {
+  border-color: var(--acc);
+}
+
+.activity-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: var(--code);
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  flex: none;
+}
+
+.activity-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+}

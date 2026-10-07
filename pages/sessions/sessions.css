@@ -1,0 +1,199 @@
+/* Sessions inspector styling */
+.agent-tree {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.agent-node {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.agent-node.root {
+  border-color: var(--acc);
+}
+
+.agent-children {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-left: 20px;
+  border-left: 2px dashed var(--line);
+  padding-left: 14px;
+}
+
+.agent-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.agent-avatar {
+  font-size: 18px;
+  background: var(--code);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+
+.agent-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 6px;
+}
+
+/* Chat & Tool Call Stream */
+.chat-thread {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.chat-msg {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.chat-sender {
+  font-size: 11px;
+  color: var(--muted);
+  display: flex;
+  gap: 6px;
+}
+
+.chat-bubble {
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.45;
+  background: var(--bg);
+  border: 1px solid var(--line);
+}
+
+.chat-msg.user .chat-bubble {
+  background: var(--accbg);
+  border-color: var(--acc);
+}
+
+.tool-call-card {
+  background: var(--code);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--acc);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tool-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tool-badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--acc);
+  background: var(--accbg);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.working-pulse {
+  animation: pulse 1.5s infinite;
+  color: var(--acc);
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+/* Timeline */
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 10px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.timeline-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--acc);
+  margin-top: 4px;
+  flex: none;
+}
+
+.timeline-content {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+/* Tasks */
+.task-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+}
+
+.task-item.done .task-check {
+  color: var(--ok);
+  font-weight: bold;
+}
+
+.task-item.active .task-check {
+  color: var(--acc);
+  font-weight: bold;
+}
+
+.task-item.blocked .task-check {
+  color: var(--bad);
+  font-weight: bold;
+}

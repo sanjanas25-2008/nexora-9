@@ -1,0 +1,31 @@
+/* Global UI state: current view, tabs, filters, settings */
+const st = {
+  v: "dash",
+  lang: "en",
+  col: false,
+  tab: {},
+  sid: null,
+  sf: "all",
+  st: "tabs",
+  exp: false,
+  sesSearch: "",
+  actSearch: "",
+  cfg: {
+    ast: true,
+    imp: true,
+    test: true,
+    lint: true,
+    tries: 3,
+    diff: 60,
+    model: "Claude 3.7 Sonnet",
+    thinking: "medium",
+    permission_mode: "prompt",
+    sse: true,
+  },
+  rv: { repo: 1, team: 1, range: 1 },
+  an: {
+    b: `def apply_discount(price, pct):\n    return price - price * pct / 100\n\ndef checkout(cart):\n    total = sum(i.price for i in cart)\n    return apply_discount(total, cart.pct)`,
+    a: `import dateutil\nfrom billing.helpers import round_money\n\ndef apply_discount(price, pct, cap=100):\n    pct = max(0, min(pct, cap))\n    result = price - price * pct / 100\n    return round_money(result)\n\ndef checkout(cart):\n    total = sum(i.price for i in cart)\n    return apply_discount(total, cart.pct)`,
+    i: `apply_discount,checkout,paginate,parse_iso,parse_date,list_users,User,Cart,db,session,billing,billing.pricing,api.utils`,
+  },
+};
